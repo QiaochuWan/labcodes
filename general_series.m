@@ -1,7 +1,7 @@
 function power_series
 clc;
 close all;
-
+%add new 
 %%load invidual files
 % files=dir(fullfile(pwd,'*.mat'));
 % sortName=sort_nat({files.name});
