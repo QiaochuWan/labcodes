@@ -1,10 +1,8 @@
 # Labcodes 
 
-Those codes are for data processing in [Snoke's lab](https://www.snokelab.com/)
-
-Most of them are based on main gui matlab code of [Jonathan Beaumariage](https://www.mathworks.com/matlabcentral/profile/authors/8492801?detail=all)
-
-More information can be founded in his [youtube channel](https://www.youtube.com/@jonathanbeaumariage6480/videos)
+Those codes are for data processing in [Snoke's lab](https://www.snokelab.com/)  
+Most of them are based on main gui matlab code of [Jonathan Beaumariage](https://www.mathworks.com/matlabcentral/profile/authors/8492801?detail=all)  
+More information can be founded in his [youtube channel](https://www.youtube.com/@jonathanbeaumariage6480/videos)  
 
 <!-- markdownlint-disable -->
 
