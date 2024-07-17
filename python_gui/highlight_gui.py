@@ -27,7 +27,7 @@ class ImageApp:
 
         # StringVar to hold the RGB values and contrast text
         self.rgb_values = tk.StringVar()
-        self.rgb_values.set("Average RGB Values and Contrast:")
+        # self.rgb_values.set("Average RGB Values and Contrast:")
         self.label = tk.Label(control_frame, textvariable=self.rgb_values)
         self.label.pack()
 
@@ -76,11 +76,22 @@ class ImageApp:
         # Variables for pixel selection
         self.pixel_selection_enabled = False
         self.selected_pixel = None
-        self.tolerance = 2  # Tolerance for RGB value similarity
+        self.tolerance = 1 # Tolerance for RGB value similarity
 
         # Variables for selection range
         self.selection_start = None
         self.selection_rect = None
+
+        # Tolerance input
+        self.tolerance_label = tk.Label(control_frame, text="Tolerance:")
+        self.tolerance_label.pack()
+
+        self.tolerance_entry = tk.Entry(control_frame)
+        self.tolerance_entry.pack()
+        self.tolerance_entry.insert(1, str(self.tolerance))  # Set the default value
+
+        self.btn_set_tolerance = tk.Button(control_frame, text="Set Tolerance", command=self.set_tolerance)
+        self.btn_set_tolerance.pack()
 
     def load_image(self):
         """Load an image and display it on the canvas."""
@@ -193,6 +204,16 @@ class ImageApp:
             self.canvas.tag_raise("line")
             self.canvas.tag_raise("label")
 
+
+    def set_tolerance(self):
+        """Set the tolerance value from the input field and refresh the highlight."""
+        try:
+            self.tolerance = int(self.tolerance_entry.get())
+            if self.selected_pixel is not None:
+                img_array = np.array(self.image)  # Convert image to numpy array
+                self.highlight_similar_pixels(img_array, self.selected_pixel)  # Refresh highlight
+        except ValueError:
+            pass  # Handle invalid input if necessary
 if __name__ == "__main__":
     root = tk.Tk()  # Create the main window
     app = ImageApp(root)  # Create an instance of the ImageApp class
