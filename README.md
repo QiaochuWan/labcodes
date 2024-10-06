@@ -26,4 +26,4 @@ More information can be founded in his [youtube channel](https://www.youtube.com
 * Will merge the SVM thickness classifier code into the python gui
 * Will create a GUI for matlab processing code for more general data
 * Condider to use U-net deep learning algrithm for hBN thickness measurement
-* Will add AFM data to the data folder
+* Will add AFM data to the data folder..
